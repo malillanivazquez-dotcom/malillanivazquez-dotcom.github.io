@@ -1,90 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>PRIMAVERA | LUMINERE</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
+<!-- Producto (Repite esto para los 4 productos) -->
+<div class="producto">
+    <img src="primavera-1.jpg" alt="Conjunto">
+    <h3>Nombre Producto</h3>
+    <p>$Precio</p>
+    
+    <!-- TRES BOTONES -->
+    <button onclick="abrirModal(...)">Ver Detalles</button>
+    <button>🛒</button> <!-- Añadir al carrito -->
+    <button>❤️</button> <!-- Me gusta -->
+</div>
 
-    <!-- Menú Superior -->
-    <header class="navbar">
-        <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit;">🏠 Inicio</a></div>
-        <div class="logo">LUMINERE</div>
-        <div class="nav-right">
-            <span>🔍</span> <span>❤️</span> <span>🛒</span> <span>👤</span>
-        </div>
-    </header>
-
-    <section class="titulo-coleccion">
-        <h1>PRIMAVERA</h1>
-    </section>
-
-    <!-- Productos de Primavera -->
-    <section class="grid-productos">
-        
-        <!-- Producto 1: look2.jpg -> primavera-1.jpg -->
-        <div class="producto">
-            <img src="primavera-1.jpg" alt="Conjunto Polka Dot Charm">
-            <h3>Polka Dot Charm</h3>
-            <p>$799</p>
-            <button onclick="abrirModal('Polka Dot Charm', 'Top negro con lazo y falda de volantes con lunares. Un look fresco y juvenil.', '$799')">Ver Detalles</button>
-            <button>❤️</button>
-        </div>
-
-        <!-- Producto 2: look5.jpg -> primavera-2.jpg -->
-        <div class="producto">
-            <img src="primavera-2.jpg" alt="Conjunto Urban Stripes">
-            <h3>Urban Stripes</h3>
-            <p>$899</p>
-            <button onclick="abrirModal('Urban Stripes', 'Top de rayas con cremallera y falda marrón. Estilo minimalista y sofisticado.', '$899')">Ver Detalles</button>
-            <button>❤️</button>
-        </div>
-
-        <!-- Producto 3: look6.jpg -> primavera-3.jpg -->
-        <div class="producto">
-            <img src="primavera-3.jpg" alt="Conjunto Vintage Polka">
-            <h3>Vintage Polka</h3>
-            <p>$950</p>
-            <button onclick="abrirModal('Vintage Polka', 'Top con bufanda integrada y falda midi de lunares. Elegancia retro.', '$950')">Ver Detalles</button>
-            <button>❤️</button>
-        </div>
-
-        <!-- Producto 4: look3.jpg -> primavera-4.jpg -->
-        <div class="producto">
-            <img src="primavera-4.jpg" alt="Vestido Classic Dot">
-            <h3>Classic Dot</h3>
-            <p>$750</p>
-            <button onclick="abrirModal('Classic Dot', 'Vestido de lunares estilo halter. Un básico imprescindible para el sol.', '$750')">Ver Detalles</button>
-            <button>❤️</button>
-        </div>
-
-    </section>
-
-    <!-- Modal (Cuadro Flotante) -->
-    <div id="modal" class="modal">
-        <div class="modal-contenido">
-            <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size: 20px;">&times;</span>
-            <h2 id="modal-titulo">Nombre</h2>
-            <p id="modal-desc">Descripción</p>
-            <p><strong>Precio: <span id="modal-precio"></span></strong></p>
-            <div class="tallas">Tallas: XS, S, M, L, XL, XXL</div>
-            <br>
-            <button style="width: 100%;">Añadir al Carrito</button>
-        </div>
-    </div>
-
-    <script>
-        function abrirModal(nombre, desc, precio) {
-            document.getElementById('modal-titulo').innerText = nombre;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-precio').innerText = precio;
-            document.getElementById('modal').style.display = 'flex';
-        }
-        function cerrarModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-    </script>
-
-</body>
-</html>
+<!-- En el Modal (Cuadro Flotante) -->
+<div class="modal-contenido">
+    <span onclick="cerrarModal()" style="float:right; cursor:pointer;">&times;</span>
+    <h2 id="modal-titulo"></h2>
+    <p id="modal-desc"></p>
+    <p><strong>Precio: <span id="modal-precio"></span></strong></p>
+    
+    <!-- SELECTOR DE TALLAS -->
+    <label for="tallas">Selecciona tu talla:</label>
+    <select id="tallas" style="display:block; margin: 10px auto;">
+        <option value="xs">XS</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+        <option value="xxl">XXL</option>
+    </select>
+    
+    <button style="margin-top: 15px;">Añadir al Carrito</button>
+</div>
