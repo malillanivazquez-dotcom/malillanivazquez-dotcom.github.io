@@ -1,65 +1,88 @@
-body {
-    margin: 0;
-    background-color: #E1DACA; /* Un beige muy clarito y elegante */
-    font-family: 'Times New Roman', serif; /* Letra clásica y elegante */
-    color: #4a3728; /* Café oscuro */
+/* --- CONFIGURACIÓN GENERAL --- */
+:root {
+    --fondo-elegante: #F9F7F2; /* El beige clarito que pediste */
+    --texto-cafe: #5C4B40;     /* Café cálido para textos */
+    --blanco-transparente: rgba(255, 255, 255, 0.85);
 }
 
+body {
+    margin: 0;
+    background-color: var(--fondo-elegante);
+    font-family: 'Georgia', serif;
+    color: var(--texto-cafe);
+}
+
+/* --- MENÚ SUPERIOR --- */
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 25px 50px;
+    align-items: center;
 }
 
-.logo { font-size: 1.5rem; font-weight: bold; }
+.logo { font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; }
 
-/* --- ESTO REEMPLAZA A LO QUE TENÍAS ANTES --- */
+.nav-right span { margin-left: 20px; cursor: pointer; font-size: 1.3rem; }
 
-/* Ajuste para el Lobby */
+/* --- LOBBY (HERO) --- */
 .hero {
     height: 60vh;
     background: url('fondo-inicio.jpg') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; 
+    position: relative;
 }
 
 .hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Capa oscura para que el texto resalte */
+    background: rgba(0, 0, 0, 0.2); /* Oscurece un poco para que el título resalte */
 }
 
 .hero h1 {
-    position: relative; 
-    font-size: 3rem;
-    letter-spacing: 8px;
-    color: #ffffff; 
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para el texto */
+    position: relative;
+    font-size: 3.5rem;
+    letter-spacing: 12px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
-/* Ajuste para las tarjetas de Colecciones */
+/* --- SOBRE NOSOTROS --- */
+.about {
+    padding: 60px 20%;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* --- COLECCIONES (GRID) --- */
+.grid-colecciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 50px;
+}
+
 .card {
-    height: 400px;
+    height: 300px;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    border-radius: 5px;
-    position: relative;
-    border: 1px solid #dcdcdc; 
+    border-radius: 8px;
+    border: 1px solid #e0dcd5;
 }
 
-/* Aquí el título se verá café sobre un cuadrito blanco semitransparente */
 .card h3 {
-    background: rgba(255, 255, 255, 0.8); 
-    padding: 15px 25px;
-    color: #4a3728; /* Café oscuro elegante */
+    background: var(--blanco-transparente);
+    padding: 12px 24px;
+    color: var(--texto-cafe);
     border-radius: 5px;
-    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
