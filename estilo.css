@@ -102,3 +102,21 @@ body {
     text-align: center;
     position: relative;
 }
+
+/* Para que los 3 botones quepan bien */
+.producto button {
+    margin: 5px 2px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    background: #5C4B40;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de corazón y carrito */
+.producto button:nth-child(even) {
+    background: #D2C4B7; /* Un color distinto para los iconos */
+    color: #5C4B40;
+}
