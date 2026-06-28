@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    background-color: #fcfaf8; /* Un beige muy clarito y elegante */
+    font-family: 'Times New Roman', serif; /* Letra clásica y elegante */
+    color: #4a3728; /* Café oscuro */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+
+.hero {
+    height: 60vh;
+    background: url('fondo-inicio.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero h1 { font-size: 3rem; letter-spacing: 8px; }
+
+.about {
+    padding: 50px 20%;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.grid-colecciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 50px;
+}
+
+.card {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
