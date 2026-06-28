@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PRIMAVERA | LUMINERE</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- Menú Superior -->
+    <header class="navbar">
+        <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit;">🏠 Inicio</a></div>
+        <div class="logo">LUMINERE</div>
+        <div class="nav-right">
+            <span>🔍</span> <span>❤️</span> <span>🛒</span> <span>👤</span>
+        </div>
+    </header>
+
+    <!-- Título de la colección -->
+    <section class="titulo-coleccion">
+        <h1>PRIMAVERA</h1>
+    </section>
+
+    <!-- Cuadrícula de 4 productos -->
+    <section class="grid-productos">
+        <!-- Producto 1 -->
+        <div class="producto">
+            <img src="prod-primavera-1.jpg" alt="Producto">
+            <h3>Vestido Floral</h3>
+            <p>$599</p>
+            <button onclick="verDetalles()">Ver Detalles</button>
+            <button>❤️</button>
+        </div>
+        <!-- Repite este bloque para los otros 3 productos cambiando el nombre/foto -->
+    </section>
+
+    <!-- Cuadro flotante (Modal) para detalles -->
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+            <span onclick="cerrarDetalles()" style="float:right; cursor:pointer;">&times;</span>
+            <h2>Nombre del Producto</h2>
+            <p>Descripción elegante de la prenda...</p>
+            <div class="tallas">Tallas: XS, S, M, L, XL</div>
+            <p><strong>Precio: $599</strong></p>
+            <button>Añadir al Carrito</button>
+        </div>
+    </div>
+
+</body>
+</html>
