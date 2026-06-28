@@ -63,21 +63,28 @@
                 <option>XS</option> <option>S</option> <option>M</option> <option>L</option> <option>XL</option>
             </select>
             
-            <button style="width: 100%; margin-top: 10px;">Añadir al Carrito</button>
+            <button onclick="agregarAlCarrito()" style="width: 100%; margin-top: 10px;">Añadir al Carrito</button>
         </div>
     </div>
 
-    <script>
-        function abrirModal(nombre, desc, precio) {
-            document.getElementById('modal-titulo').innerText = nombre;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-precio').innerText = precio;
-            document.getElementById('modal').style.display = 'flex';
-        }
-        function cerrarModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-    </script>
+        <script>
+    let contadorCarrito = 0;
 
-</body>
-</html>
+    function abrirModal(nombre, desc, precio) {
+        document.getElementById('modal-titulo').innerText = nombre;
+        document.getElementById('modal-desc').innerText = desc;
+        document.getElementById('modal-precio').innerText = precio;
+        document.getElementById('modal').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    function agregarAlCarrito() {
+        contadorCarrito++;
+        document.getElementById('carrito-contador').innerText = contadorCarrito;
+        alert("¡Producto añadido al carrito!");
+        cerrarModal();
+    }
+</script>
