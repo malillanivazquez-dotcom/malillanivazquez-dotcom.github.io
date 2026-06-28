@@ -1,32 +1,50 @@
-<!-- Producto (Repite esto para los 4 productos) -->
-<div class="producto">
-    <img src="primavera-1.jpg" alt="Conjunto">
-    <h3>Nombre Producto</h3>
-    <p>$Precio</p>
-    
-    <!-- TRES BOTONES -->
-    <button onclick="abrirModal(...)">Ver Detalles</button>
-    <button>🛒</button> <!-- Añadir al carrito -->
-    <button>❤️</button> <!-- Me gusta -->
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Primavera | Luminere</title>
+</head>
+<body>
 
-<!-- En el Modal (Cuadro Flotante) -->
-<div class="modal-contenido">
-    <span onclick="cerrarModal()" style="float:right; cursor:pointer;">&times;</span>
-    <h2 id="modal-titulo"></h2>
-    <p id="modal-desc"></p>
-    <p><strong>Precio: <span id="modal-precio"></span></strong></p>
-    
-    <!-- SELECTOR DE TALLAS -->
-    <label for="tallas">Selecciona tu talla:</label>
-    <select id="tallas" style="display:block; margin: 10px auto;">
-        <option value="xs">XS</option>
-        <option value="s">S</option>
-        <option value="m">M</option>
-        <option value="l">L</option>
-        <option value="xl">XL</option>
-        <option value="xxl">XXL</option>
-    </select>
-    
-    <button style="margin-top: 15px;">Añadir al Carrito</button>
-</div>
+    <header class="navbar">
+        <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit; font-size: 1.5rem;">🏠</a></div>
+        <div class="logo">LUMINERE</div>
+        <div class="nav-right"><span>🔍</span> <span>❤️</span> <span>🛒</span> <span>👤</span></div>
+    </header>
+
+    <h1 style="text-align: center; margin-top: 30px;">PRIMAVERA</h1>
+
+    <section class="grid-productos">
+        <!-- Producto 1 -->
+        <div class="producto">
+            <img src="primavera-1.jpg" alt="Producto">
+            <h3>Polka Dot Charm</h3>
+            <button onclick="alert('Detalles')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+        <!-- Producto 2 -->
+        <div class="producto">
+            <img src="primavera-2.jpg" alt="Producto">
+            <h3>Urban Stripes</h3>
+            <button onclick="alert('Detalles')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+        <!-- Producto 3 -->
+        <div class="producto">
+            <img src="primavera-3.jpg" alt="Producto">
+            <h3>Vintage Polka</h3>
+            <button onclick="alert('Detalles')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+        <!-- Producto 4 -->
+        <div class="producto">
+            <img src="primavera-4.jpg" alt="Producto">
+            <h3>Classic Dot</h3>
+            <button onclick="alert('Detalles')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+    </section>
+
+</body>
+</html>
