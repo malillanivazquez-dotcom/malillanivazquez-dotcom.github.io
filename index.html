@@ -2,84 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>PRIMAVERA | LUMINERE</title>
+    <title>LUMINERE | Elegancia Atemporal</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
+    <!-- Menú Superior -->
     <header class="navbar">
-        <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit;">🏠</a></div>
         <div class="logo">LUMINERE</div>
         <div class="nav-right">
-            <span>🔍</span> <span>❤️</span> <span>🛒</span> <span>👤</span>
+            <span class="icon">🔍</span>
+            <span class="icon">❤️</span>
+            <span class="icon">🛒</span>
+            <span class="icon">👤</span>
         </div>
     </header>
 
-    <h1 style="text-align: center; margin-top: 30px;">PRIMAVERA</h1>
-
-    <section class="grid-productos">
-        
-        <div class="producto">
-            <img src="primavera-1.jpg" alt="Producto">
-            <h3>Polka Dot Charm</h3>
-            <p>$799</p>
-            <button onclick="abrirModal('Polka Dot Charm', 'Top negro con lazo y falda de volantes.', '$799')">Detalles</button>
-            <button>🛒</button> <button>❤️</button>
-        </div>
-
-        <div class="producto">
-            <img src="primavera-2.jpg" alt="Producto">
-            <h3>Urban Stripes</h3>
-            <p>$899</p>
-            <button onclick="abrirModal('Urban Stripes', 'Top de rayas con falda marrón.', '$899')">Detalles</button>
-            <button>🛒</button> <button>❤️</button>
-        </div>
-
-        <div class="producto">
-            <img src="primavera-3.jpg" alt="Producto">
-            <h3>Vintage Polka</h3>
-            <p>$950</p>
-            <button onclick="abrirModal('Vintage Polka', 'Top con bufanda y falda midi.', '$950')">Detalles</button>
-            <button>🛒</button> <button>❤️</button>
-        </div>
-
-        <div class="producto">
-            <img src="primavera-4.jpg" alt="Producto">
-            <h3>Classic Dot</h3>
-            <p>$750</p>
-            <button onclick="abrirModal('Classic Dot', 'Vestido de lunares estilo halter.', '$750')">Detalles</button>
-            <button>🛒</button> <button>❤️</button>
-        </div>
-
+    <!-- Imagen de fondo principal -->
+    <section class="hero">
+        <h1>LUMINERE</h1>
     </section>
 
-    <div id="modal" class="modal">
-        <div class="modal-contenido">
-            <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size:24px;">&times;</span>
-            <h2 id="modal-titulo"></h2>
-            <p id="modal-desc"></p>
-            <p><strong>Precio: <span id="modal-precio"></span></strong></p>
-            
-            <label>Talla:</label>
-            <select>
-                <option>S</option> <option>M</option> <option>L</option>
-            </select>
-            <br><br>
-            <button style="width: 100%;">Añadir al Carrito</button>
-        </div>
-    </div>
+    <!-- Sobre Nosotros -->
+    <section class="about">
+        <h2>Sobre Nosotros</h2>
+        <p>En LUMINERE, fusionamos la moda minimalista con la sofisticación clásica. Cada prenda es seleccionada cuidadosamente para brindarte calidad, comodidad y un estilo único que resalta tu esencia. Creemos en la elegancia que perdura en el tiempo, creando piezas que se convierten en tus favoritas. Bienvenida a nuestra comunidad de estilo.</p>
+    </section>
 
-    <script>
-        function abrirModal(nombre, desc, precio) {
-            document.getElementById('modal-titulo').innerText = nombre;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-precio').innerText = precio;
-            document.getElementById('modal').style.display = 'flex';
-        }
-        function cerrarModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-    </script>
+    <!-- Colecciones -->
+    <section class="colecciones">
+        <div class="grid-colecciones">
+            <a href="primavera.html" class="card" style="background-image: url('coleccion-primavera.jpg');">
+                <h3>PRIMAVERA</h3>
+            </a>
+            <a href="verano.html" class="card" style="background-image: url('coleccion-verano.jpg');">
+                <h3>VERANO</h3>
+            </a>
+            <a href="otono.html" class="card" style="background-image: url('coleccion-otono.jpg');">
+                <h3>OTOÑO</h3>
+            </a>
+        </div>
+    </section>
 
 </body>
 </html>
