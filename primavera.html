@@ -16,35 +16,63 @@
     <h1 style="text-align: center; margin-top: 30px;">PRIMAVERA</h1>
 
     <section class="grid-productos">
-        <!-- Producto 1 -->
         <div class="producto">
             <img src="primavera-1.jpg" alt="Producto">
             <h3>Polka Dot Charm</h3>
-            <button onclick="alert('Detalles')">Detalles</button>
+            <p>$799</p>
+            <button onclick="abrirModal('Polka Dot Charm', 'Top negro con lazo y falda de volantes.', '$799')">Detalles</button>
             <button>🛒</button> <button>❤️</button>
         </div>
-        <!-- Producto 2 -->
         <div class="producto">
             <img src="primavera-2.jpg" alt="Producto">
             <h3>Urban Stripes</h3>
-            <button onclick="alert('Detalles')">Detalles</button>
+            <p>$899</p>
+            <button onclick="abrirModal('Urban Stripes', 'Top de rayas con falda marrón.', '$899')">Detalles</button>
             <button>🛒</button> <button>❤️</button>
         </div>
-        <!-- Producto 3 -->
         <div class="producto">
             <img src="primavera-3.jpg" alt="Producto">
             <h3>Vintage Polka</h3>
-            <button onclick="alert('Detalles')">Detalles</button>
+            <p>$950</p>
+            <button onclick="abrirModal('Vintage Polka', 'Top con bufanda y falda midi.', '$950')">Detalles</button>
             <button>🛒</button> <button>❤️</button>
         </div>
-        <!-- Producto 4 -->
         <div class="producto">
             <img src="primavera-4.jpg" alt="Producto">
             <h3>Classic Dot</h3>
-            <button onclick="alert('Detalles')">Detalles</button>
+            <p>$750</p>
+            <button onclick="abrirModal('Classic Dot', 'Vestido de lunares estilo halter.', '$750')">Detalles</button>
             <button>🛒</button> <button>❤️</button>
         </div>
     </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+            <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size: 24px;">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-desc"></p>
+            <p><strong>Precio: <span id="modal-precio"></span></strong></p>
+            
+            <label>Selecciona tu talla:</label>
+            <select style="display:block; width:100%; margin: 10px 0;">
+                <option>XS</option> <option>S</option> <option>M</option> <option>L</option> <option>XL</option>
+            </select>
+            
+            <button style="width: 100%; margin-top: 10px;">Añadir al Carrito</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal(nombre, desc, precio) {
+            document.getElementById('modal-titulo').innerText = nombre;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-precio').innerText = precio;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
