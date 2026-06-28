@@ -68,7 +68,9 @@
     </div>
 
     <script>
-    let contadorCarrito = 0;
+    // Al cargar la página, leemos el número que ya existía
+    let contadorCarrito = localStorage.getItem('miCarrito') ? parseInt(localStorage.getItem('miCarrito')) : 0;
+    document.getElementById('carrito-contador').innerText = contadorCarrito;
 
     function abrirModal(nombre, desc, precio) {
         document.getElementById('modal-titulo').innerText = nombre;
@@ -83,6 +85,8 @@
 
     function agregarAlCarrito() {
         contadorCarrito++;
+        // Guardamos el nuevo valor en la memoria del navegador
+        localStorage.setItem('miCarrito', contadorCarrito);
         document.getElementById('carrito-contador').innerText = contadorCarrito;
         alert("¡Producto añadido al carrito!");
         cerrarModal();
