@@ -13,30 +13,34 @@ body {
 
 .logo { font-size: 1.5rem; font-weight: bold; }
 
+/* --- ESTO REEMPLAZA A LO QUE TENÍAS ANTES --- */
+
+/* Ajuste para el Lobby */
 .hero {
     height: 60vh;
     background: url('fondo-inicio.jpg') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    position: relative; 
 }
 
-.hero h1 { font-size: 3rem; letter-spacing: 8px; }
-
-.about {
-    padding: 50px 20%;
-    text-align: center;
-    line-height: 1.8;
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Capa oscura para que el texto resalte */
 }
 
-.grid-colecciones {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px 50px;
+.hero h1 {
+    position: relative; 
+    font-size: 3rem;
+    letter-spacing: 8px;
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para el texto */
 }
 
+/* Ajuste para las tarjetas de Colecciones */
 .card {
     height: 400px;
     background-size: cover;
@@ -44,8 +48,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     text-decoration: none;
-    font-size: 1.5rem;
     border-radius: 5px;
+    position: relative;
+    border: 1px solid #dcdcdc; 
+}
+
+/* Aquí el título se verá café sobre un cuadrito blanco semitransparente */
+.card h3 {
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 15px 25px;
+    color: #4a3728; /* Café oscuro elegante */
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
