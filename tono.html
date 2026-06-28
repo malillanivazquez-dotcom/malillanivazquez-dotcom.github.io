@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>OTOÑO | LUMINERE</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit; font-size: 1.5rem;">🏠</a></div>
+        <div class="logo">LUMINERE</div>
+        <div class="nav-right"><span>🔍</span> <span>❤️</span> <span>🛒</span> <span>👤</span></div>
+    </header>
+
+    <h1 style="text-align: center; margin-top: 30px;">OTOÑO</h1>
+
+    <section class="grid-productos">
+        
+        <div class="producto">
+            <img src="otono-1.jpg" alt="Capa Crema">
+            <h3>Capa Crema</h3>
+            <p>$1250</p>
+            <button onclick="abrirModal('Capa Crema', 'Capa elegante en tono crema, ideal para climas frescos.', '$1250')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+
+        <div class="producto">
+            <img src="otono-2.jpg" alt="Look Clásico">
+            <h3>Look Clásico</h3>
+            <p>$1100</p>
+            <button onclick="abrirModal('Look Clásico', 'Chaqueta estructurada con jeans clásicos.', '$1100')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+
+        <div class="producto">
+            <img src="otono-3.jpg" alt="Chic Rosa">
+            <h3>Chic Rosa</h3>
+            <p>$1350</p>
+            <button onclick="abrirModal('Chic Rosa', 'Combinación de texturas con suéter rosa y abrigo oscuro.', '$1350')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+
+        <div class="producto">
+            <img src="otono-4.jpg" alt="Poncho Gris">
+            <h3>Poncho Gris</h3>
+            <p>$1180</p>
+            <button onclick="abrirModal('Poncho Gris', 'Poncho versátil con minifalda y calentadores.', '$1180')">Detalles</button>
+            <button>🛒</button> <button>❤️</button>
+        </div>
+
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+            <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size: 24px;">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-desc"></p>
+            <p><strong>Precio: <span id="modal-precio"></span></strong></p>
+            
+            <label>Selecciona tu talla:</label>
+            <select style="display:block; width:100%; margin: 10px 0;">
+                <option>XS</option> <option>S</option> <option>M</option> <option>L</option> <option>XL</option>
+            </select>
+            
+            <button style="width: 100%; margin-top: 10px;">Añadir al Carrito</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal(nombre, desc, precio) {
+            document.getElementById('modal-titulo').innerText = nombre;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-precio').innerText = precio;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
