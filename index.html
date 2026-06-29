@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <title>LUMINERE | Elegancia Atemporal</title>
     <link rel="stylesheet" href="estilo.css">
-    <style>
-        /* Estilos del Modal y Toast integrados */
-        .toast { visibility: hidden; position: fixed; bottom: 30px; right: 30px; background: #333; color: white; padding: 15px; border-radius: 5px; z-index: 1000; transition: opacity 0.3s; opacity: 0; }
-        .toast.mostrar { visibility: visible; opacity: 1; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; }
-        .contenido-modal { background: white; width: 80%; max-width: 500px; margin: 50px auto; padding: 20px; border-radius: 10px; position: relative; }
-        .cerrar { cursor: pointer; float: right; font-size: 24px; font-weight: bold; }
-    </style>
 </head>
 <body>
 
@@ -20,7 +12,7 @@
         <div class="nav-right">
             <span class="icon">🔍</span>
             <span class="icon">❤️</span>
-            <span class="icon" onclick="abrirCarrito()" style="cursor:pointer;">🛒</span>
+            <span class="icon" onclick="abrirCarrito()">🛒</span>
             <span class="icon">👤</span>
         </div>
     </header>
@@ -31,7 +23,7 @@
 
     <section class="about">
         <h2>Sobre Nosotros</h2>
-        <p>En LUMINERE, fusionamos la moda minimalista con la sofisticación clásica. Cada prenda es seleccionada cuidadosamente para brindarte calidad, comodidad y un estilo único que resalta tu esencia. Creemos en la elegancia que perdura en el tiempo.</p>
+        <p>En LUMINERE, fusionamos la moda minimalista con la sofisticación clásica. Cada prenda es seleccionada cuidadosamente para brindarte calidad, comodidad y un estilo único que resalta tu esencia.</p>
     </section>
 
     <section class="colecciones">
@@ -45,7 +37,7 @@
     <div id="toast" class="toast">¡Producto añadido al carrito!</div>
 
     <div id="modal-carrito" class="modal">
-        <div class="contenido-modal">
+        <div class="modal-contenido">
             <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
             <h2>Tu Carrito</h2>
             <div id="lista-carrito"></div>
@@ -64,7 +56,7 @@
         }
 
         function abrirCarrito() {
-            document.getElementById("modal-carrito").style.display = "block";
+            document.getElementById("modal-carrito").style.display = "flex";
             const lista = document.getElementById("lista-carrito");
             const totalEl = document.getElementById("total-precio");
             lista.innerHTML = "";
