@@ -4,45 +4,93 @@
     <meta charset="UTF-8">
     <title>LUMINERE | Elegancia Atemporal</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* Estilos del Modal y Toast integrados */
+        .toast { visibility: hidden; position: fixed; bottom: 30px; right: 30px; background: #333; color: white; padding: 15px; border-radius: 5px; z-index: 1000; transition: opacity 0.3s; opacity: 0; }
+        .toast.mostrar { visibility: visible; opacity: 1; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; }
+        .contenido-modal { background: white; width: 80%; max-width: 500px; margin: 50px auto; padding: 20px; border-radius: 10px; position: relative; }
+        .cerrar { cursor: pointer; float: right; font-size: 24px; font-weight: bold; }
+    </style>
 </head>
 <body>
 
-    <!-- Menú Superior -->
     <header class="navbar">
         <div class="logo">LUMINERE</div>
         <div class="nav-right">
             <span class="icon">🔍</span>
             <span class="icon">❤️</span>
-            <span class="icon">🛒</span>
+            <span class="icon" onclick="abrirCarrito()" style="cursor:pointer;">🛒</span>
             <span class="icon">👤</span>
         </div>
     </header>
 
-    <!-- Imagen de fondo principal -->
     <section class="hero">
         <h1>LUMINERE</h1>
     </section>
 
-    <!-- Sobre Nosotros -->
     <section class="about">
         <h2>Sobre Nosotros</h2>
-        <p>En LUMINERE, fusionamos la moda minimalista con la sofisticación clásica. Cada prenda es seleccionada cuidadosamente para brindarte calidad, comodidad y un estilo único que resalta tu esencia. Creemos en la elegancia que perdura en el tiempo, creando piezas que se convierten en tus favoritas. Bienvenida a nuestra comunidad de estilo.</p>
+        <p>En LUMINERE, fusionamos la moda minimalista con la sofisticación clásica. Cada prenda es seleccionada cuidadosamente para brindarte calidad, comodidad y un estilo único que resalta tu esencia. Creemos en la elegancia que perdura en el tiempo.</p>
     </section>
 
-    <!-- Colecciones -->
     <section class="colecciones">
         <div class="grid-colecciones">
-            <a href="primavera.html" class="card" style="background-image: url('coleccion-primavera.jpg');">
-                <h3>PRIMAVERA</h3>
-            </a>
-            <a href="verano.html" class="card" style="background-image: url('coleccion-verano.jpg');">
-                <h3>VERANO</h3>
-            </a>
-            <a href="otono.html" class="card" style="background-image: url('coleccion-otono.jpg');">
-                <h3>OTOÑO</h3>
-            </a>
+            <a href="primavera.html" class="card" style="background-image: url('coleccion-primavera.jpg');"><h3>PRIMAVERA</h3></a>
+            <a href="verano.html" class="card" style="background-image: url('coleccion-verano.jpg');"><h3>VERANO</h3></a>
+            <a href="otono.html" class="card" style="background-image: url('coleccion-otono.jpg');"><h3>OTOÑO</h3></a>
         </div>
     </section>
 
+    <div id="toast" class="toast">¡Producto añadido al carrito!</div>
+
+    <div id="modal-carrito" class="modal">
+        <div class="contenido-modal">
+            <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="lista-carrito"></div>
+            <hr>
+            <h3>Total: $<span id="total-precio">0.00</span></h3>
+        </div>
+    </div>
+
+    <script>
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        function mostrarNotificacion() {
+            const toast = document.getElementById("toast");
+            toast.className = "toast mostrar";
+            setTimeout(() => { toast.className = "toast"; }, 3000);
+        }
+
+        function abrirCarrito() {
+            document.getElementById("modal-carrito").style.display = "block";
+            const lista = document.getElementById("lista-carrito");
+            const totalEl = document.getElementById("total-precio");
+            lista.innerHTML = "";
+            let total = 0;
+            carrito.forEach((p, i) => {
+                total += (p.precio * p.cantidad);
+                lista.innerHTML += `<p>${p.nombre} - $${p.precio} x ${p.cantidad} <button onclick="eliminar(${i})">X</button></p>`;
+            });
+            totalEl.innerText = total.toFixed(2);
+        }
+
+        function cerrarCarrito() { document.getElementById("modal-carrito").style.display = "none"; }
+
+        function agregarAlCarrito(nombre, precio) {
+            const item = carrito.find(p => p.nombre === nombre);
+            if(item) item.cantidad++;
+            else carrito.push({nombre, precio, cantidad: 1});
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarNotificacion();
+        }
+
+        function eliminar(i) {
+            carrito.splice(i, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            abrirCarrito();
+        }
+    </script>
 </body>
 </html>
